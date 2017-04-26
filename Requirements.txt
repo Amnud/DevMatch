@@ -3,3 +3,5 @@ Memberships
 * User should see link for pro plan on home page
 * Basic plan link should point to th regualr Device sign up plan
 * Pro plan link should point to a custom sign up form
+    -> Use query string parameters!
+
