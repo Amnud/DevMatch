@@ -5,3 +5,6 @@ Memberships
 * Pro plan link should point to a custom sign up form
     -> Use query string parameters!
 
+ActiveRecord = Language to simplify SQL commands
+Parameters = Query string parameters & POST requests)
+Substitution
