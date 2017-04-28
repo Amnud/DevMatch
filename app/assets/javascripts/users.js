@@ -15,33 +15,32 @@ $(document).on('turbolinks:load', function(){
     
     //Collect the credit card fields.
     var ccNum = $('#card_number').val(),
-        cvcNum = $('card_code').val(),
-        expMonth = $('card_month').val(),
-        expYear = $('card_year').val();
+        cvcNum = $('#card_code').val(),
+        expMonth = $('#card_month').val(),
+        expYear = $('#card_year').val();
+    
+    
         
     //Use Stripe JS library to check for card errors.
     var error = false;
-    
     //Validate card number.
     if(!Stripe.card.validateCardNumber(ccNum)) {
       error = true;
-      alert('The credit card number appears to be invalid')
+      alert('The credit card number appears to be invalid');
     }
-    
     //Validate CVC number.
     if(!Stripe.card.validateCVC(cvcNum)) {
       error = true;
-      alert('The CVC number appears to be invalid')
+      alert('The CVC number appears to be invalid');
     }
-    
     //Validate expiration date.
-    if(!Stripe.card.validateExpiry(expMonth,expYear)) {
+    if(!Stripe.card.validateExpiry(expMonth, expYear)) {
       error = true;
-      alert('The expiration date appears to be invalid')
+      alert('The expiration date appears to be invalid');
     }
     
     if (error) {
-      //If there are card errors, donnt send to stripe
+      //If there are card errors, dont send to stripe
       signupBtn.prop('disabled', false).val("Sign Up")
     } 
     else {
