@@ -35,8 +35,11 @@
           </div>
           <ul class="nav navbar-nav navbar-right">
             <% if user_signed_in? %>
-              <li><%= link_to "Community", users_path %></li>
+              <li>
+                <%= image_tag current_user.profile.avatar.url(:thumb), class: 'first' %>
+              </li>
               <li><%= link_to "Manage account", edit_user_registration_path%></li>
+              <li><%= link_to "Community", users_path %></li>
             <% end %>
             <li><%= link_to "About", about_path %></li>
             <li><%= link_to "Contact Us", new_contact_path %></li>
